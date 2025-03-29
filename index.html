@@ -21,14 +21,17 @@
     .nav-tabs {
       background-color: #444;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
     }
     .nav-tabs ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
+      display: flex;
     }
     .nav-tabs li {
-      float: left;
+      flex: 1;
     }
     .nav-tabs li a {
       display: block;
@@ -40,6 +43,15 @@
     .nav-tabs li a:hover {
       background-color: #ddd;
       color: #000;
+    }
+    @media (max-width: 600px) {
+      .nav-tabs ul {
+        flex-direction: column;
+        text-align: center;
+      }
+      .nav-tabs li {
+        width: 100%;
+      }
     }
     .container {
       width: 90%;
@@ -77,18 +89,23 @@
     .news small {
       color: #777;
     }
+    @media (max-width: 600px) {
+      .news h2 {
+        font-size: 1.3em;
+      }
+      .news h3 {
+        font-size: 1.1em;
+      }
+      .news p {
+        font-size: 1em;
+      }
+    }
     footer {
       text-align: center;
       padding: 20px;
       background-color: #333;
       color: #fff;
       margin-top: 20px;
-    }
-    /* Clear floats */
-    .clearfix::after {
-      content: "";
-      display: table;
-      clear: both;
     }
   </style>
 </head>
@@ -99,7 +116,7 @@
   
   <!-- Navigation Tabs -->
   <nav class="nav-tabs">
-    <ul class="clearfix">
+    <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="about.html">About</a></li>
@@ -151,7 +168,6 @@
         <p>A small project that I'm currently working on. Stay tuned for updates and its official launch!</p>
         <small>Posted on: February 12, 2025</small>
       </article>
-      
     </section>
   </div>
   

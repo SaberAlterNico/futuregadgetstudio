@@ -20,14 +20,17 @@
     .nav-tabs {
       background-color: #444;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
     }
     .nav-tabs ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
+      display: flex;
     }
     .nav-tabs li {
-      float: left;
+      flex: 1;
     }
     .nav-tabs li a {
       display: block;
@@ -40,6 +43,14 @@
       background-color: #ddd;
       color: #000;
     }
+    @media (max-width: 600px) {
+      .nav-tabs ul {
+        flex-direction: column;
+      }
+      .nav-tabs li {
+        text-align: center;
+      }
+    }
     .container {
       width: 90%;
       max-width: 800px;
@@ -49,6 +60,7 @@
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
     }
     .about-section {
@@ -71,6 +83,19 @@
       width: 100%;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-section {
+        padding-right: 0;
+      }
+      .portrait {
+        flex: 1;
+        margin-top: 20px;
+      }
     }
     footer {
       text-align: center;

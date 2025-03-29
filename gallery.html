@@ -21,14 +21,17 @@
     .nav-tabs {
       background-color: #444;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
     }
     .nav-tabs ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
+      display: flex;
     }
     .nav-tabs li {
-      float: left;
+      flex: 1;
     }
     .nav-tabs li a {
       display: block;
@@ -41,6 +44,15 @@
       background-color: #ddd;
       color: #000;
     }
+    @media (max-width: 600px) {
+      .nav-tabs ul {
+        flex-direction: column;
+        text-align: center;
+      }
+      .nav-tabs li {
+        width: 100%;
+      }
+    }
     .container {
       width: 90%;
       max-width: 1200px;
@@ -52,18 +64,22 @@
     .gallery-links {
       list-style-type: none;
       padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
     }
     .gallery-links li {
-      margin-bottom: 15px;
       padding: 10px;
       background-color: #f9f9f9;
       border: 1px solid #ddd;
       border-radius: 3px;
+      text-align: center;
     }
     .gallery-links li a {
       text-decoration: none;
       color: #333;
       font-size: 1.2em;
+      display: block;
     }
     .gallery-links li a:hover {
       text-decoration: underline;
@@ -76,12 +92,6 @@
       color: #fff;
       margin-top: 20px;
     }
-    /* Clear floats */
-    .clearfix::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
   </style>
 </head>
 <body>
@@ -91,7 +101,7 @@
   
   <!-- Navigation Tabs -->
   <nav class="nav-tabs">
-    <ul class="clearfix">
+    <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="about.html">About</a></li>
@@ -101,21 +111,11 @@
   <div class="container">
     <h2>Galleries</h2>
     <ul class="gallery-links">
-      <li>
-        <a href="acosta_ikebukuro.html">ACOSTA Ikebukuro</a>
-      </li>
-      <li>
-        <a href="comiket.html">Comic Market (COMIKET)</a>
-      </li>
-      <li>
-        <a href="bokurabu.html">Bokurabu!</a>
-      </li>
-      <li>
-        <a href="animejapan.html">Anime Japan</a>
-      </li>
-      <li>
-        <a href="portrait.html">Portrait Gallery</a>
-      </li>
+      <li><a href="acosta_ikebukuro.html">ACOSTA Ikebukuro</a></li>
+      <li><a href="comiket.html">Comic Market (COMIKET)</a></li>
+      <li><a href="bokurabu.html">Bokurabu!</a></li>
+      <li><a href="animejapan.html">Anime Japan</a></li>
+      <li><a href="portrait.html">Portrait Gallery</a></li>
     </ul>
   </div>
   
